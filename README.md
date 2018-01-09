@@ -28,6 +28,7 @@ npm test
     |—— .eslintrc.js                 es6 代码规范配置文件
     |—— build                        构建项文件
     |—— config                       配置项文件
+    |—— lib                          第三方库
     |—— static                       静态目录
     |—— test                         单元测试目录
     |—— dist                         编译文件目录
@@ -40,7 +41,6 @@ npm test
     |   |—— components               通用组件
     |   |—— config                   配置文件
     |   |—— i18n                     国际化
-        |—— lib                      第三方库
     |   |—— router                   路由
     |   |—— store                    全局状态
     |   |—— util                     公共函数
