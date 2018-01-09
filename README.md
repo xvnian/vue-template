@@ -37,10 +37,10 @@ npm test
     |   |   |—— stylus               样式文件
     |   |   |—— fonts                字体文件
     |   |   |—— images               图片文件
-    |   |   |—— lib                  第三方库
     |   |—— components               通用组件
     |   |—— config                   配置文件
     |   |—— i18n                     国际化
+        |—— lib                      第三方库
     |   |—— router                   路由
     |   |—— store                    全局状态
     |   |—— util                     公共函数
