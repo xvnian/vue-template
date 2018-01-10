@@ -29,10 +29,10 @@ npm test
     |—— build                        构建项文件
     |—— config                       配置项文件
     |—— lib                          第三方库
-    |—— static                       静态目录
+    |—— static                       静态目录(非模块化资源)
     |—— test                         单元测试目录
     |—— dist                         编译文件目录
-    |—— src                          项目源文件
+    |—— src                          项目源文件(模块化资源)
     |   |—— api                      数据接口服务
     |   |—— assets                   资源文件
     |   |   |—— stylus               样式文件
