@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Demo from 'views/demo/Demo'
+import demo from './demo'
+import meeting from './meeting'
 
 Vue.use(Router)
 
@@ -10,9 +11,7 @@ export default new Router({
       path: '/',
       redirect: '/demo'
     },
-    {
-      path: '/demo',
-      component: Demo
-    }
+    ...demo,
+    ...meeting
   ]
 })
