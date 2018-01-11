@@ -5,9 +5,14 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import {addClass} from './util/dom'
+
+  export default {
+    name: 'app',
+    created() {
+      addClass()
+    }
+  }
 </script>
 
 <style scoped>

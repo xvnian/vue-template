@@ -18,6 +18,5 @@
 <style scoped lang="stylus">
 div{
   color: red
-
 }
 </style>
