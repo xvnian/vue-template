@@ -5,12 +5,16 @@
 </template>
 
 <script>
-  import {addClass} from './util/dom'
+  // import {addClass} from './util/dom'
+  import {getInfoData} from '@/api/info'
 
   export default {
     name: 'app',
     created() {
-      addClass()
+      // addClass()
+      getInfoData().then(res => {
+        console.log(res)
+      })
     }
   }
 </script>

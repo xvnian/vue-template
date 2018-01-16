@@ -9,6 +9,9 @@ import router from './router'
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
 
+/* eslint no-unused-vars: "off" */
+import data from './mock/info'
+
 // 配置跨越携带cookie 和证书
 axios.defaults.withCredentials = true
 // 请求预处理
