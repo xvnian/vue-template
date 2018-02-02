@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
+import store from './store'
 
 /* eslint no-unused-vars: "off" */
 import data from './mock/info'
@@ -33,6 +34,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: {App}
 })
