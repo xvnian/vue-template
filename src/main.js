@@ -10,6 +10,8 @@ import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
 import store from './store'
 
+import echart from 'echarts'
+
 /* eslint no-unused-vars: "off" */
 import data from './mock/info'
 

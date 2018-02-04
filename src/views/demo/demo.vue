@@ -17,14 +17,19 @@
     <div class="elment" id="demowrap">
       <p v-for="item in 100">sjjjjjjj</p>
     </div>
-
+    <child ref="demo"></child>
   </div>
 </template>
 
 <script>
+  import child from './child'
+
   export default {
     created() {
-      console.log(this.$store)
+
+    },
+    components: {
+      child
     },
     computed: {
       count() {
@@ -39,6 +44,7 @@
     },
     methods: {
       add() {
+        console.log(this.$refs.demo.init())
         this.$store.commit('demo/DO_SOMETHING')
       },
       decrement() {
