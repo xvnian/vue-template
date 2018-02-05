@@ -4,6 +4,11 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+// 多线程
+const HappyPack = require('happypack');
+const os = require('os')
+const HappyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length}); // 启动线程池});
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -20,6 +25,20 @@ const createLintingRule = () => ({
 })
 
 module.exports = {
+  plugins:[
+    new HappyPack({
+      id: 'js',
+      // cache: true,
+      threadPool: HappyThreadPool,
+      loaders: ['babel-loader']
+    }),
+    // new HappyPack({
+    //   id: 'vue',
+    //   // cache: true,
+    //   threadPool: HappyThreadPool,
+    //   loaders: ['vue-loader']
+    // })
+  ],
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -46,11 +65,13 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        // use: 'happypack/loader?id=vue',
         options: vueLoaderConfig
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        // loader: 'babel-loader',
+        use: 'happypack/loader?id=js',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
