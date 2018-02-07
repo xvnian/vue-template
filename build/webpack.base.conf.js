@@ -5,9 +5,15 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 // 多线程
-const HappyPack = require('happypack');
+const HappyPack = require('happypack')
 const os = require('os')
-const HappyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length}); // 启动线程池});
+const HappyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length}) // 启动线程池});
+
+// dll
+const webpack = require('webpack')
+const isDebug = (process.env.NODE_ENV === 'development');
+const libPath = isDebug ? '../static/dll/lib/manifest.json' :
+  '../static/dll/dist/manifest.json';
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -26,12 +32,16 @@ const createLintingRule = () => ({
 
 module.exports = {
   plugins:[
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require(libPath)
+    }),
     new HappyPack({
       id: 'js',
       // cache: true,
       threadPool: HappyThreadPool,
       loaders: ['babel-loader']
-    }),
+    })
     // new HappyPack({
     //   id: 'vue',
     //   // cache: true,

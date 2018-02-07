@@ -9,11 +9,11 @@
     </ul>
     count: {{count}}
     doubleCount: {{doubleCount}}
-    <div>
+    <div style="border-top: 1px solid #ccc">
       <button @click="add">add</button>
       <button @click="decrement"> delete</button>
     </div>
-
+    <img src="./images/2.png" style="width:50px;" alt="">
     <div class="elment" id="demowrap">
       <p v-for="item in 100">sjjjjjjj</p>
     </div>
@@ -44,8 +44,10 @@
     },
     methods: {
       add() {
-        console.log(this.$refs.demo.init())
-        this.$store.commit('demo/DO_SOMETHING')
+        // console.log(this.$refs.demo.init())
+        // this.$store.commit('demo/DO_SOMETHING')
+        this.$store.dispatch('demo/add')
+        // console.log(this.$store.dispatch('demo/add'))
       },
       decrement() {
         this.$store.commit('decrement')
@@ -58,9 +60,18 @@
   @import "~assets/stylus/variable"
   @import "~assets/stylus/mixin"
 
+  .elment{
+    /*border-top 1px solid #ccc*/
+    /*border-bottom 0.2px solid #ccc*/
+    background #cccccc
+    height 1px
+    transform scale(0.9)
+  }
+
   .elment {
     height 300px
-    overflow: auto;
+    overflow: hidden
+
   }
 
   .elment::-webkit-scrollbar-track-piece {
