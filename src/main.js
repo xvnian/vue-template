@@ -11,10 +11,15 @@ import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
 import store from './store'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+
 // import echart from 'echarts'
 
 /* eslint no-unused-vars: "off" */
-import data from './mock/info'
+// import data from './mock/info'
 
 // 配置跨越携带cookie 和证书
 axios.defaults.withCredentials = true
