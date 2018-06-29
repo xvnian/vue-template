@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // "/api": {
+      //   target: "https://api.teambition.com",
+      //   pathRewrite: {"^/api": ""},
+      //   secure: false,
+      //   headers: {
+      //     Referer: 'https://www.teambition.com'
+      //   }
+      // }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
